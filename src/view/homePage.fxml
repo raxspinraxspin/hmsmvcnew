@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="usersPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainControllerApp">
+   <children>
+      <TabPane fx:id="root" layoutX="-2.0" layoutY="-1.0" prefHeight="774.0" prefWidth="1278.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="-7.0" >
+        <tabs>
+            <Tab fx:id="employeeTab" text="Employee" >
+               <content>
+                  
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="386.0" text="Details" />
+                              <TextField fx:id="employeeName" promptText="Name" />
+                              <TextField fx:id="gender" promptText="Gender" />
+                              <TextField fx:id="specialty" promptText="Specialty" />
+                           </children>
+                        </VBox>
+                        <HBox layoutX="355.0" layoutY="-3.0" prefHeight="743.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab fx:id="patientTab" text="Patient">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="-2.0" layoutY="20.0" prefHeight="717.0" prefWidth="426.0" style="-fx-border-color: #cce0e2;">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="367.0" text="Patient Particulars">
+                                 <padding>
+                                    <Insets left="120.0" right="70.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="patientID" promptText="ID" />
+                              <TextField fx:id="patientFirstName" promptText="First Name" />
+                              <TextField fx:id="patientLastName" promptText="Last Name" />
+                              <TextField fx:id="patientEmail" promptText="Email" />
+                              <TextField fx:id="patientAddress" promptText="Address" />
+                              <TextField fx:id="patientTelephone" promptText="Telephone" />
+                              <ComboBox fx:id="patientComboBoxGender" prefHeight="28.0" prefWidth="391.0" promptText="Gender" />
+                              <DatePicker fx:id="patientDOB" prefHeight="28.0" prefWidth="392.0" promptText="Date of Birth" />
+                              <Label prefHeight="18.0" prefWidth="362.0" text="Insurance Details">
+                                 <padding>
+                                    <Insets left="110.0" right="60.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="patientComboBoxInsuranceName" prefHeight="27.0" prefWidth="398.0" promptText="Search Insurance Name" />
+                              <TextField fx:id="patientInsuranceCardNo" promptText="Insurance Card No" />
+                              <TextField fx:id="patientNationalOrPassportID" promptText="National ID / Passport No" />
+                              <ComboBox fx:id="patientMaritalStatus" prefHeight="28.0" prefWidth="386.0" promptText="Marital Status" />
+                              <Label prefHeight="18.0" prefWidth="439.0" />
+                              <Label layoutX="30.0" layoutY="252.0" prefHeight="18.0" prefWidth="362.0" text="More Details">
+                                 <padding>
+                                    <Insets left="110.0" right="60.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField layoutX="30.0" layoutY="303.0" />
+                              <TextField layoutX="30.0" layoutY="330.0" />
+                              <TextField />
+                              <TextField />
+                              <TextField />
+                              <TextField />
+                           </children>
+                        </VBox>
+                        <Text layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" text="Patient Details" wrappingWidth="1279.4282989501953" />
+                        <VBox layoutX="852.0" layoutY="632.0" prefHeight="107.0" prefWidth="430.0" style="-fx-border-color: #cce0e2;" AnchorPane.bottomAnchor="3.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Button fx:id="buttonAddEntry" mnemonicParsing="false" prefHeight="27.0" prefWidth="416.0" text="Add Entry">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Label fx:id="dataUploadStatus" prefHeight="17.0" prefWidth="388.0" />
+                              <Button fx:id="buttonClear" layoutX="31.0" layoutY="13.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="416.0" text="Clear" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="853.0" layoutY="20.0" prefHeight="608.0" prefWidth="427.0" style="-fx-border-color: #cce0e2;">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="367.0">
+                                 <padding>
+                                    <Insets left="120.0" right="70.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <VBox.margin>
+                                    <Insets left="60.0" />
+                                 </VBox.margin>
+                              </ImageView>
+                              <Label prefHeight="18.0" prefWidth="374.0" text="Passport Photo">
+                                 <padding>
+                                    <Insets left="120.0" right="70.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="13.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextArea fx:id="patientAllergies" prefHeight="82.0" prefWidth="382.0" promptText="Any Known Allergies" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="423.0" layoutY="20.0" prefHeight="717.0" prefWidth="431.0" style="-fx-border-color: #cce0e2;">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="367.0" text="Spouse Particulars">
+                                 <padding>
+                                    <Insets left="120.0" right="70.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="spouseFirstName" promptText="First Name" />
+                              <TextField fx:id="spouseLastName" promptText="Last Name" />
+                              <TextField fx:id="spouseEmail" promptText="Email" />
+                              <TextField fx:id="spouseAddress" promptText="Address" />
+                              <TextField fx:id="spouseTelephone" promptText="Telephone" />
+                              <ComboBox fx:id="spouseComboBoxGender" prefHeight="28.0" prefWidth="391.0" promptText="Gender" />
+                              <DatePicker fx:id="spouseDOB" prefHeight="28.0" prefWidth="392.0" promptText="Date of Birth" />
+                              <Label prefHeight="18.0" prefWidth="362.0" text="Insurance Details">
+                                 <padding>
+                                    <Insets left="110.0" right="60.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="31.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <ComboBox fx:id="spouseComboBoxInsuranceName" prefHeight="27.0" prefWidth="441.0" promptText="Search Insurance Name" />
+                              <TextField fx:id="spouseInsuranceCardNo" promptText="Insurance Card No" />
+                              <TextField fx:id="spouseNationalOrPassportID" promptText="National ID / Passport No" />
+                              <Label prefHeight="18.0" prefWidth="439.0" />
+                              <Label layoutX="30.0" layoutY="252.0" prefHeight="18.0" prefWidth="362.0" text="More Details">
+                                 <padding>
+                                    <Insets left="110.0" right="60.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="42.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField layoutX="30.0" layoutY="303.0" />
+                              <TextField layoutX="30.0" layoutY="330.0" />
+                              <TextField />
+                              <TextField />
+                              <TextField />
+                              <TextField />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="triageTab" text="Triage">
+            <content>
+
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;">
+                           <children>
+                              <TableView fx:id="triageTable" prefHeight="692.0" prefWidth="927.0">
+                                <columns>
+                                  <TableColumn fx:id="triageIDcolumn" prefWidth="32.271147549152374" text="ID" />
+                                  <TableColumn fx:id="triageFirstNamecolumn" prefWidth="151.59329986572266" text="First Name" />
+                                    <TableColumn fx:id="triageLastNamecolumn" prefWidth="157.01698303222656" text="Last Name" />
+                                    <TableColumn fx:id="triageAgecolumn" minWidth="5.8433837890625" prefWidth="60.474609375" text="Age" />
+                                    <TableColumn fx:id="triageBloodPressurecolumn" prefWidth="110.10174560546875" text="Blood Pressure" />
+                                    <TableColumn fx:id="triageTemperaturecolumn" prefWidth="84.33895874023438" text="Temperature" />
+                                    <TableColumn fx:id="triageHeightcolumn" prefWidth="78.37286376953125" text="Height" />
+                                    <TableColumn fx:id="triageWeightcolumn" prefWidth="80.5423583984375" text="Weight" />
+                                    <TableColumn fx:id="triageBMIcolumn" minWidth="0.0" prefWidth="71.0509033203125" text="BMI" />
+                                    <TableColumn fx:id="triageBMIStatuscolumn" minWidth="0.0" prefWidth="97.8983154296875" text="BMIStatus" />
+                                </columns>
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="367.0" text="Add Triage Details">
+                                 <padding>
+                                    <Insets left="60.0" right="60.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="triageSearchPatientID" promptText="ID" />
+                              <Button fx:id="triageButtonSearchPatientID" mnemonicParsing="false" prefHeight="27.0" prefWidth="328.0" text="Search Patient ID" />
+                              <TextField fx:id="triageFirstName" promptText="First Name" />
+                              <TextField fx:id="triageLastName" promptText="Last Name" />
+                              <TextField fx:id="triageAge" promptText="Age" />
+                              <Label prefHeight="18.0" prefWidth="317.0" />
+                              <Label layoutX="30.0" layoutY="164.0" prefHeight="18.0" prefWidth="317.0" />
+                              <Label layoutX="30.0" layoutY="183.0" prefHeight="18.0" prefWidth="317.0" />
+                              <TextField fx:id="triageBloodPressure" promptText="Blood Pressure" />
+                              <TextField fx:id="triageTemperature" promptText="Temperature" />
+                              <TextField fx:id="triageHeight" promptText="Height" />
+                              <TextField fx:id="triageWeight" promptText="Weight" />
+                              <Label layoutX="30.0" layoutY="164.0" prefHeight="18.0" prefWidth="317.0" />
+                              <TextField fx:id="triageBMI" promptText="BMI Calculator" />
+                              <TextField fx:id="triageBMIStatus" promptText="BMI Status" />
+                              <Label layoutX="30.0" layoutY="183.0" prefHeight="18.0" prefWidth="317.0" />
+                              <Label layoutX="30.0" layoutY="201.0" prefHeight="18.0" prefWidth="317.0" />
+                              <Button fx:id="triageButtonAddEntry" mnemonicParsing="false" prefHeight="27.0" prefWidth="320.0" text="Add Entry" />
+                              <Button fx:id="triageButtonClear" mnemonicParsing="false" prefHeight="27.0" prefWidth="344.0" text="Clear" />
+                              <Button fx:id="triageButtonLoadData" mnemonicParsing="false" prefHeight="27.0" prefWidth="328.0" text="Load Data" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="diagnosisTab" text="Diagnosis">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="appointmentsTab" text="Appointments">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;">
+                           <padding>
+                              <Insets bottom="5.0" right="2.0" top="1.0" />
+                           </padding>
+                           <children>
+                              <TableView prefHeight="735.0" prefWidth="922.0">
+                                <columns>
+                                  <TableColumn prefWidth="31.72167879343033" text="ID" />
+                                    <TableColumn prefWidth="104.90439224243164" text="Patient's Name" />
+                                    <TableColumn prefWidth="56.208770751953125" text="Gender" />
+                                    <TableColumn prefWidth="70.67828369140625" text="Date" />
+                                    <TableColumn prefWidth="84.31304931640625" text="Time" />
+                                    <TableColumn prefWidth="109.0782470703125" text="Session Duration" />
+                                    <TableColumn prefWidth="105.73907470703125" text="Doctor's Name" />
+                                    <TableColumn prefWidth="134.9566650390625" text="Appointment Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="327.0" text="Book An Appointment">
+                                 <padding>
+                                    <Insets left="100.0" right="70.0" />
+                                 </padding>
+                              </Label>
+                              <TextField promptText="Enter Patient ID To Search" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="398.0" text="Click To Search Patient ID" />
+                              <TextField promptText="Patient's Name" />
+                              <ComboBox prefHeight="27.0" prefWidth="316.0" promptText="Gender" />
+                              <DatePicker prefHeight="27.0" prefWidth="323.0" promptText="Select Date" />
+                              <ComboBox prefHeight="27.0" prefWidth="327.0" promptText="Select Time" />
+                              <Label />
+                              <TextField promptText="Session Duration" />
+                              <TextField promptText="Enter Doctor's Name" />
+                              <TextField promptText="Location" />
+                              <Label />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="435.0" text="Add Entry" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="326.0" text="Clear" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="335.0" text="Load Data" />
+                              <Label />
+                              <TextField promptText="Appointment Status" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="labaratoryTab" text="Labaratory">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="pharmacyTab" text="Pharmacy">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="recordsTab" text="Records">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="reportsTab" text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox layoutX="355.0" layoutY="-2.0" prefHeight="742.0" prefWidth="927.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;" />
+                        <VBox layoutX="-1.0" layoutY="-1.0" prefHeight="737.0" prefWidth="356.0">
+                           <padding>
+                              <Insets bottom="5.0" left="20.0" right="20.0" top="2.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="446.0">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button mnemonicParsing="false" prefHeight="28.0" prefWidth="355.0" text="Employees Reports" />
+                              <Button layoutX="30.0" layoutY="12.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="355.0" text="Patients Reports" />
+                              <Button layoutX="30.0" layoutY="68.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="355.0" text="Labaratory Reports" />
+                              <Button layoutX="30.0" layoutY="97.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="355.0" text="Pharmacy Reports" />
+                              <Button layoutX="30.0" layoutY="125.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="355.0" text="Diagnosis Reports" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+   <padding>
+      <Insets top="6.0" />
+   </padding>
+</AnchorPane>

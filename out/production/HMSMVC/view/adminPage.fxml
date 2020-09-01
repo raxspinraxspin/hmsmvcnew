@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="adminPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdminController">
+   <children>
+      <TabPane layoutY="-2.0" prefHeight="772.0" prefWidth="1281.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Admin">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="743.0" prefWidth="1220.0">
+                     <children>
+                        <HBox layoutX="343.0" prefHeight="740.0" prefWidth="933.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;">
+                           <children>
+                              <TableView fx:id="usersTable"  prefHeight="740.0" prefWidth="960.0">
+                                <columns>
+                                  <TableColumn fx:id="IDcolumn" prefWidth="25.87817484140396" text="ID" />
+                                  <TableColumn fx:id="firstnamecolumn" prefWidth="75.96526718139648" text="First Name" />
+                                    <TableColumn fx:id="lastnamecolumn" prefWidth="80.69571685791016" text="Last Name" />
+                                    <TableColumn fx:id="usernamecolumn" prefWidth="113.80865478515625" text="Username" />
+                                    <TableColumn fx:id="emailcolumn" prefWidth="193.11297607421875" text="Email" />
+                                    <TableColumn fx:id="divisioncolumn" minWidth="9.46087646484375" prefWidth="57.32183837890625" text="Division" />
+                                    <TableColumn fx:id="addresscolumn" prefWidth="78.191162109375" text="Address" />
+                                    <TableColumn fx:id="telephonecolumn" prefWidth="74.852294921875" text="Telephone" />
+                                    <TableColumn fx:id="dobcolumn" prefWidth="61.21728515625" text="DOB" />
+                                    <TableColumn fx:id="gendercolumn" prefWidth="52.59130859375" text="Gender" />
+                                    <TableColumn fx:id="occupationcolumn" prefWidth="113.53039087883349" text="Occupation" />
+                                </columns>
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="740.0" prefWidth="343.0" style="-fx-border-color: #cce0e2;">
+                           <padding>
+                              <Insets left="15.0" right="15.0" top="1.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="348.0" text="Add Admin &amp; System Users">
+                                 <padding>
+                                    <Insets left="70.0" right="60.0" />
+                                 </padding>
+                                 <VBox.margin>
+                                    <Insets top="2.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="id" promptText="ID" />
+                              <TextField fx:id="fname" layoutX="26.0" layoutY="32.0" promptText="First Name" />
+                              <TextField fx:id="lname" layoutX="26.0" layoutY="58.0" promptText="Last Name" />
+                              <TextField fx:id="username" layoutX="26.0" layoutY="85.0" promptText="Username" />
+                              <TextField fx:id="email" layoutX="26.0" layoutY="112.0" promptText="Email" />
+                              <PasswordField fx:id="password" promptText="Password" />
+                              <ComboBox fx:id="comboBoxDivision" prefHeight="28.0" prefWidth="311.0" promptText="Admin / User" />
+                              <TextField fx:id="address" promptText="Address" />
+                              <TextField fx:id="telephone" promptText="Telephone" />
+                              <DatePicker fx:id="dob" prefHeight="27.0" prefWidth="313.0" promptText="Date of Birth" />
+                              <ComboBox fx:id="comboBoxGender" prefHeight="27.0" prefWidth="313.0" promptText="Gender" />
+                              <ComboBox fx:id="comboBoxOccupation" prefHeight="27.0" prefWidth="313.0" promptText="Occupation / Specialty" />
+                              <Label layoutX="26.0" layoutY="383.0" prefHeight="18.0" prefWidth="309.0" />
+                              <Label prefHeight="18.0" prefWidth="309.0" />
+                              <Button fx:id="buttonAddEntry" mnemonicParsing="false" onAction="#addUser" prefHeight="27.0" prefWidth="336.0" text="Add Entry" />
+                              <Button fx:id="buttonClear" mnemonicParsing="false" onAction="#clearData" prefHeight="27.0" prefWidth="317.0" text="Clear" />
+                              <Button fx:id="buttonLoadData" mnemonicParsing="false" onAction="#loadUserData" prefHeight="27.0" prefWidth="343.0" text="Load Data" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabUpdateEntry" text="Update Entry">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="342.0" prefHeight="740.0" prefWidth="937.0" style="-fx-border-color: #cce0e2; -fx-background-color: #e5e5e5;" />
+                        <VBox layoutX="-1.0" layoutY="1.0" prefHeight="740.0" prefWidth="344.0" style="-fx-border-color: #cce0e2;">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="304.0" text="Edit &amp; Update Details">
+                                 <padding>
+                                    <Insets left="60.0" right="60.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="searchUserID" promptText="Enter ID &amp; Click Search" />
+                              <Button fx:id="buttonSearchUserID" mnemonicParsing="false" onAction="#uButtonSearchUserDetails" prefHeight="28.0" prefWidth="304.0" text="Search ID" />
+                              <Label layoutX="31.0" layoutY="11.0" prefHeight="18.0" prefWidth="304.0">
+                                 <padding>
+                                    <Insets left="60.0" right="60.0" />
+                                 </padding>
+                              </Label>
+                              <TextField fx:id="uFirstName" promptText="First Name" />
+                              <TextField fx:id="uLastName" layoutX="31.0" layoutY="83.0" promptText="Last Name" />
+                              <TextField fx:id="uUsername" layoutX="31.0" layoutY="110.0" promptText="Username" />
+                              <TextField fx:id="uEmail" layoutX="31.0" layoutY="137.0" promptText="Email" />
+                              <PasswordField fx:id="newPassword" promptText="New Password" />
+                              <TextField fx:id="uAddress" layoutX="31.0" layoutY="164.0" promptText="Address" />
+                              <TextField fx:id="uTelephone" layoutX="31.0" layoutY="137.0" promptText="Telephone" />
+                              <DatePicker fx:id="uDOB" prefHeight="27.0" prefWidth="321.0" promptText="Date of Birth" />
+                              <ComboBox fx:id="uComboBoxGender" prefHeight="27.0" prefWidth="306.0" promptText="Gender" />
+                              <ComboBox fx:id="uComboBoxUserOccupation" prefHeight="28.0" prefWidth="313.0" promptText="Occupation / Specialty" />
+                              <Label prefHeight="18.0" prefWidth="301.0" />
+                              <Label layoutX="31.0" layoutY="326.0" prefHeight="18.0" prefWidth="301.0" />
+                              <Label layoutX="31.0" layoutY="345.0" prefHeight="18.0" prefWidth="301.0" />
+                              <Button fx:id="ubuttonUpdateEntry" mnemonicParsing="false" onAction="#uUpdateUsersDetails" prefHeight="28.0" prefWidth="306.0" text="Update Entry" />
+                              <Button fx:id="ubuttonClear" mnemonicParsing="false" onAction="#uButtonClear" prefHeight="28.0" prefWidth="319.0" text="Clear" />
+                          </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

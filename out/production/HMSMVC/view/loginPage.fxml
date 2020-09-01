@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <VBox layoutX="412.0" layoutY="139.0" prefHeight="473.0" prefWidth="399.0" style="-fx-background-color: #e5e5e5; -fx-border-color: #cce0e2;">
+         <padding>
+            <Insets bottom="50.0" left="30.0" right="30.0" top="120.0" />
+         </padding>
+         <children>
+            <Label fx:id="dbStatus" prefHeight="18.0" prefWidth="388.0">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="username" promptText="Username" />
+            <Label prefHeight="18.0" prefWidth="577.0" />
+            <Label layoutX="30.0" layoutY="87.0" prefHeight="18.0" prefWidth="577.0" />
+            <PasswordField fx:id="password" promptText="Password" />
+            <Hyperlink fx:id="resetpassword" onAction="#resetPassword" prefHeight="24.0" prefWidth="347.0" text="Forgot Password? Click Here To Reset">
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </Hyperlink>
+            <Label layoutX="41.0" layoutY="221.0" prefHeight="18.0" prefWidth="577.0" />
+            <ComboBox fx:id="comboBox" prefHeight="27.0" prefWidth="348.0" promptText="Admin / User" />
+            <Label layoutX="30.0" layoutY="87.0" prefHeight="18.0" prefWidth="577.0" />
+            <Label layoutX="30.0" layoutY="105.0" prefHeight="18.0" prefWidth="577.0" />
+            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#Login" prefHeight="27.0" prefWidth="654.0" text="Login" />
+            <Hyperlink fx:id="createUserAccount" layoutX="41.0" layoutY="267.0" onAction="#registerSystemUser" prefHeight="24.0" prefWidth="347.0" text="Create account to login">
+               <padding>
+                  <Insets left="75.0" right="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Hyperlink>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
